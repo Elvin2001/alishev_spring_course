@@ -4,9 +4,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="testBean"
-          class="ru.education.spring.TestBean">
-        <constructor-arg value="Bean"/>
+    <bean id="rockMusic"
+          class="ru.education.spring.RockMusic">
+    </bean>
+
+    <bean id="musicPlayer"
+          class="ru.education.spring.MusicPlayer">
+        <constructor-arg ref="rockMusic"/>
     </bean>
 
 </beans>
