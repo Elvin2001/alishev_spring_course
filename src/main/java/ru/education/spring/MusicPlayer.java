@@ -1,13 +1,43 @@
 package ru.education.spring;
 
-public class MusicPlayer {
-    Music music;
+import java.util.ArrayList;
+import java.util.List;
 
-    public MusicPlayer(Music music) {
-        this.music = music;
+public class MusicPlayer {
+    private String name;
+    private String country;
+    private List<Music> musicList = new ArrayList();
+
+    public MusicPlayer() {
+    }
+
+    public MusicPlayer(List<Music> musicList) {
+        this.musicList = musicList;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public void setMusicList(List<Music> musicList) {
+        this.musicList = musicList;
     }
 
     public void playMusic() {
-        System.out.println("Играет песня: " + music.getSong());
+        for (Music song : musicList) {
+            System.out.println("Играет песня: " + song.getSong());
+        }
     }
 }
